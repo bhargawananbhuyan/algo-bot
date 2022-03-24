@@ -17,7 +17,7 @@
 				</button>
 			</section>
 			<div class="relative">
-				<img src="../assets/hero-logo.png" alt="" class="w-[500px] h-auto -mt-5" />
+				<img src="@/assets/hero-logo.png" alt="" class="w-[500px] h-auto -mt-5" />
 				<div
 					class="w-[300px] h-[300px] bg-[#698AFFCC] opacity-50 absolute bottom-3.5 right-8 rounded-full z-[-1] blur-[50px]"
 				></div>
@@ -27,8 +27,8 @@
 
 		<!-- logos -->
 		<div class="flex items-center justify-center gap-[200px] mt-40 mb-52">
-			<img src="../assets/binance-logo.png" alt="" class="h-14 w-auto" />
-			<img src="../assets/ftx-logo.png" alt="" class="h-14 w-auto" />
+			<img src="@/assets/binance-logo.png" alt="" class="h-14 w-auto" />
+			<img src="@/assets/ftx-logo.png" alt="" class="h-14 w-auto" />
 		</div>
 		<!-- end logos -->
 
@@ -42,7 +42,7 @@
 				</p>
 			</section>
 			<img
-				src="../assets/howit.png"
+				src="@/assets/howit.png"
 				alt=""
 				class="w-[250px] h-auto absolute -top-20 -right-52"
 			/>
@@ -56,7 +56,7 @@
 				class="flex items-center border-2 border-[#7277FF] shadow-[0px_0px_60px_0px_#ACAFFF3D] rounded-xl p-5 gap-x-10 bg-[#293668CC]"
 			>
 				<div class="w-[175px] h-[175px] grid place-items-center bg-[#344482] rounded-xl">
-					<img src="../assets/chart.png" alt="" class="w-[100px] h-auto" />
+					<img src="@/assets/chart.png" alt="" class="w-[100px] h-auto" />
 				</div>
 
 				<section class="flex flex-col gap-5">
@@ -71,7 +71,7 @@
 				class="flex items-center border-2 border-[#7277FF] shadow-[0px_0px_60px_0px_#ACAFFF3D] rounded-xl p-5 gap-x-10 bg-[#293668CC]"
 			>
 				<div class="w-[175px] h-[175px] grid place-items-center bg-[#344482] rounded-xl">
-					<img src="../assets/transcript.png" alt="" class="w-[100px] h-auto" />
+					<img src="@/assets/transcript.png" alt="" class="w-[100px] h-auto" />
 				</div>
 
 				<section class="flex flex-col gap-5">
@@ -86,7 +86,7 @@
 				class="flex items-center border-2 border-[#7277FF] shadow-[0px_0px_60px_0px_#ACAFFF3D] rounded-xl p-5 gap-x-10 bg-[#293668CC]"
 			>
 				<div class="w-[175px] h-[175px] grid place-items-center bg-[#344482] rounded-xl">
-					<img src="../assets/select.png" alt="" class="w-[100px] h-auto" />
+					<img src="@/assets/select.png" alt="" class="w-[100px] h-auto" />
 				</div>
 
 				<section class="flex flex-col gap-5">
@@ -101,7 +101,7 @@
 				class="flex items-center border-2 border-[#7277FF] shadow-[0px_0px_60px_0px_#ACAFFF3D] rounded-xl p-5 gap-x-10 bg-[#293668CC]"
 			>
 				<div class="w-[175px] h-[175px] grid place-items-center bg-[#344482] rounded-xl">
-					<img src="../assets/trending.png" alt="" class="w-[100px] h-auto" />
+					<img src="@/assets/trending.png" alt="" class="w-[100px] h-auto" />
 				</div>
 
 				<section class="flex flex-col gap-5">
@@ -141,7 +141,7 @@
 				</ul>
 				<button>Get it</button>
 
-				<img src="../assets/subscribe.png" alt="" />
+				<img src="@/assets/subscribe.png" alt="" />
 				<div />
 			</div>
 			<div class="subscription-card">
@@ -188,7 +188,7 @@
 					<div
 						class="bg-[#5767A5] h-[150px] w-[150px] grid place-items-center rounded-full"
 					>
-						<img src="../assets/placeholder.png" alt="" class="w-[125px] h-auto" />
+						<img src="@/assets/placeholder.png" alt="" class="w-[125px] h-auto" />
 					</div>
 					<h1 class="text-[#B7C7FF] text-3xl font-bold">Ann</h1>
 					<p class="text-[#AFC1FF] text-xl font-semibold leading-relaxed">
@@ -202,7 +202,7 @@
 					<div
 						class="bg-[#5767A5] h-[150px] w-[150px] grid place-items-center rounded-full"
 					>
-						<img src="../assets/placeholder.png" alt="" class="w-[125px] h-auto" />
+						<img src="@/assets/placeholder.png" alt="" class="w-[125px] h-auto" />
 					</div>
 					<h1 class="text-[#B7C7FF] text-3xl font-bold">Ann</h1>
 					<p class="text-[#AFC1FF] text-xl font-semibold leading-relaxed">
@@ -216,7 +216,7 @@
 					<div
 						class="bg-[#5767A5] h-[150px] w-[150px] grid place-items-center rounded-full"
 					>
-						<img src="../assets/placeholder.png" alt="" class="w-[125px] h-auto" />
+						<img src="@/assets/placeholder.png" alt="" class="w-[125px] h-auto" />
 					</div>
 					<h1 class="text-[#B7C7FF] text-3xl font-bold">Ann</h1>
 					<p class="text-[#AFC1FF] text-xl font-semibold leading-relaxed">
@@ -230,7 +230,7 @@
 					<div
 						class="bg-[#5767A5] h-[150px] w-[150px] grid place-items-center rounded-full"
 					>
-						<img src="../assets/placeholder.png" alt="" class="w-[125px] h-auto" />
+						<img src="@/assets/placeholder.png" alt="" class="w-[125px] h-auto" />
 					</div>
 					<h1 class="text-[#B7C7FF] text-3xl font-bold">Ann</h1>
 					<p class="text-[#AFC1FF] text-xl font-semibold leading-relaxed">
@@ -244,7 +244,7 @@
 					<div
 						class="bg-[#5767A5] h-[150px] w-[150px] grid place-items-center rounded-full"
 					>
-						<img src="../assets/placeholder.png" alt="" class="w-[125px] h-auto" />
+						<img src="@/assets/placeholder.png" alt="" class="w-[125px] h-auto" />
 					</div>
 					<h1 class="text-[#B7C7FF] text-3xl font-bold">Ann</h1>
 					<p class="text-[#AFC1FF] text-xl font-semibold leading-relaxed">
@@ -274,7 +274,7 @@
 			</div>
 
 			<div class="grid place-items-center -mt-10 relative">
-				<img src="../assets/footer.png" alt="" class="w-[165px] h-auto" />
+				<img src="@/assets/footer.png" alt="" class="w-[165px] h-auto" />
 				<div
 					class="w-[200px] h-[200px] bg-[#698AFFCC] opacity-50 absolute -bottom-10 rounded-full z-[-1] blur-[35px]"
 				></div>
@@ -287,8 +287,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import PopupVue from "@/components/Popup.vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
 	name: "home",
