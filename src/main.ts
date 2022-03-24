@@ -23,7 +23,6 @@ const app: VueApp = createApp(App);
 
 declare module "@vue/runtime-core" {
 	interface State {
-		popupShown: boolean;
 		user?: User;
 	}
 	interface ComponentCustomProperties {
@@ -33,19 +32,14 @@ declare module "@vue/runtime-core" {
 
 const store = createStore({
 	state: {
-		popupShown: false,
 		user: null,
 	},
 	mutations: {
-		showPopup(state: any) {
-			console.log("showPopup function");
-			state.popupShown = true;
-		},
-		hidePopup(state: any) {
-			state.popupShown = false;
-		},
 		addUser(state: any, payload: any) {
 			state.user = payload.user;
+		},
+		removeUser(state: any) {
+			state.user = null;
 		},
 	},
 	plugins: [new VuexPersistence().plugin],

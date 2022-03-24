@@ -1,5 +1,5 @@
 <template>
-	<div v-show="showPopup">
+	<div v-show="show">
 		<div class="popup-wrapper" ref="popup">
 			<div class="popup-content">
 				<button class="signin-button" @click="googleAuth">
@@ -28,11 +28,7 @@ export default defineComponent({
 			},
 		};
 	},
-	computed: {
-		showPopup() {
-			return this.$store.state.popupShown;
-		},
-	},
+	props: ["show"],
 	methods: {
 		async googleAuth() {
 			this.authState = { ...this.authState, loading: true };
@@ -41,11 +37,11 @@ export default defineComponent({
 				.signInWithPopup(new firebase.auth.GoogleAuthProvider())
 				.then((res) => {
 					console.log(res.user);
-					this.$store.commit("hidePopup");
 					this.$store.commit("addUser", {
 						user: res.user,
 					});
 					this.authState = { loading: false, error: "" };
+					this.$emit("hide-child-event");
 				})
 				.catch((e) => {
 					console.log(e);
@@ -58,7 +54,7 @@ export default defineComponent({
 
 <style scoped>
 .popup-wrapper {
-	@apply fixed top-0 left-0 h-screen w-screen grid place-items-center;
+	@apply fixed top-0 left-0 h-screen w-screen grid place-items-center z-[100];
 }
 .popup-content {
 	@apply max-w-lg w-full h-[400px] bg-[#222D54] rounded-2xl grid place-items-center after:content-[''] after:h-screen after:w-screen after:fixed after:top-0 after:left-0 after:bg-black after:z-[-1] after:opacity-75 after:blur-sm;

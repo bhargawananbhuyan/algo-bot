@@ -1,5 +1,7 @@
 <template>
-	<header class="flex text-[#AFC1FF] justify-between items-center py-14 max-w-screen-xl mx-auto">
+	<header
+		class="flex text-[#AFC1FF] justify-between items-center py-14 max-w-screen-xl mx-auto px-5"
+	>
 		<router-link to="/" class="text-5xl font-bold">logo.</router-link>
 
 		<nav class="text-xl font-bold flex gap-x-[75px]">
@@ -23,21 +25,35 @@
 			Sign in
 		</button>
 	</header>
+
+	<PopupVue :show="popupShown" @hide-child-event="hide" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import PopupVue from "./Popup.vue";
 
 export default defineComponent({
+	data() {
+		return {
+			popupShown: false,
+		};
+	},
 	methods: {
 		showPopup() {
-			this.$store.commit("showPopup");
+			this.popupShown = true;
+		},
+		hide() {
+			this.popupShown = false;
 		},
 	},
 	computed: {
 		user() {
 			return this.$store.state.user;
 		},
+	},
+	components: {
+		PopupVue,
 	},
 });
 </script>

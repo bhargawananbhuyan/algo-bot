@@ -1,5 +1,5 @@
 <template>
-	<main class="max-w-screen-xl mx-auto">
+	<main class="max-w-screen-xl mx-auto px-5">
 		<!-- landing -->
 		<div class="mt-24 flex justify-between">
 			<section class="max-w-[500px] flex flex-col gap-y-8">
@@ -281,21 +281,14 @@
 			</div>
 		</div>
 		<!-- end contact -->
-
-		<PopupVue />
 	</main>
 </template>
 
 <script lang="ts">
-import PopupVue from "@/components/Popup.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
 	name: "home",
-	methods: {},
-	components: {
-		PopupVue,
-	},
 });
 </script>
 

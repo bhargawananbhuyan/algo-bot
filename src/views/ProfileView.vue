@@ -4,7 +4,7 @@
 			<div :key="index" class="item-card">
 				<div>
 					<h1>{{ item.title }}</h1>
-					<button>Setup</button>
+					<button @click="logOut">Setup</button>
 				</div>
 				<div class="flex flex-wrap gap-5 mt-10">
 					<span class="time-pill">1 min</span>
@@ -25,6 +25,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { getAuth, signOut } from "firebase/auth";
 
 export default defineComponent({
 	name: "profile",
@@ -38,6 +39,18 @@ export default defineComponent({
 				{ title: "Support and Resistance" },
 			],
 		};
+	},
+
+	methods: {
+		logOut() {
+			signOut(getAuth())
+				.then(() => {
+					console.log("signed out successfully");
+					this.$store.commit("removeUser");
+					this.$router.replace("/");
+				})
+				.catch((e) => console.error(e));
+		},
 	},
 });
 </script>
