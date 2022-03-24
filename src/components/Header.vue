@@ -11,7 +11,7 @@
 			<div class="flex items-center gap-3.5">
 				<router-link to="/profile" class="text-xl font-bold">{{ user?.email }}</router-link>
 				<div class="bg-[#86A1FF] h-[42px] w-[42px] grid place-items-center rounded-full">
-					<img src="../assets/avatar.png" alt="" class="w-[16px] h-auto" />
+					<img src="@/assets/avatar.png" alt="" class="w-[16px] h-auto" />
 				</div>
 			</div>
 		</div>
