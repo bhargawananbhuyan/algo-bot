@@ -16,7 +16,7 @@
 					Explore
 				</button>
 			</section>
-			<div class="relative">
+			<div class="relative float-avatar">
 				<img src="@/assets/hero-logo.png" alt="" class="w-[500px] h-auto -mt-5" />
 				<div
 					class="w-[300px] h-[300px] bg-[#698AFFCC] opacity-50 absolute bottom-3.5 right-8 rounded-full z-[-1] blur-[50px]"
@@ -45,14 +45,16 @@
 					the project and so on
 				</p>
 			</section>
-			<img
-				src="@/assets/howit.png"
-				alt=""
-				class="w-[250px] h-auto absolute -top-20 -right-52"
-			/>
-			<div
-				class="w-[175px] h-[175px] bg-[#698AFFCC] opacity-50 absolute bottom-10 -right-56 rounded-full z-[-1] blur-[35px]"
-			></div>
+			<div class="float-avatar">
+				<img
+					src="@/assets/howit.png"
+					alt=""
+					class="w-[250px] h-auto absolute -top-[275px] -right-[225px]"
+				/>
+				<div
+					class="w-[175px] h-[175px] bg-[#698AFFCC] opacity-50 absolute bottom-10 -right-56 rounded-full z-[-1] blur-[35px]"
+				></div>
+			</div>
 		</div>
 
 		<div class="mb-[200px] flex flex-col gap-y-12">
@@ -116,7 +118,7 @@
 					<button @click="subscribe(`basic`)">Get it</button>
 
 					<img src="@/assets/subscribe.png" alt="" />
-					<div />
+					<div class="float-avatar" />
 				</div>
 				<div class="subscription-card">
 					<h1>Premium</h1>
@@ -281,7 +283,7 @@
 			</div>
 
 			<div class="grid place-items-center absolute top-0 left-0 h-full w-full">
-				<div class="relative">
+				<div class="relative float-avatar">
 					<img src="@/assets/footer.png" alt="" class="w-[165px] h-auto" />
 					<div
 						class="w-[200px] h-[200px] bg-[#698AFFCC] opacity-50 absolute top-0 rounded-full z-[-1] blur-[35px]"
@@ -435,8 +437,27 @@ export default defineComponent({
 }
 .subscription-card img {
 	@apply w-[175px] h-auto absolute -left-20 -bottom-20;
+	transform: translatey(0px);
+	animation: float 2.5s ease-in-out infinite;
 }
 .subscription-card div {
 	@apply w-[175px] h-[175px] bg-[#698AFFCC] opacity-50 absolute -bottom-20 -left-20 rounded-full z-[-1] blur-[20px];
+}
+
+.float-avatar {
+	transform: translatey(0px);
+	animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-30px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }
 </style>
