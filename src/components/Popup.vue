@@ -42,6 +42,7 @@ export default defineComponent({
 					});
 					this.authState = { loading: false, error: "" };
 					this.$emit("hide-child-event");
+					window.location.reload();
 				})
 				.catch((e) => {
 					console.log(e);

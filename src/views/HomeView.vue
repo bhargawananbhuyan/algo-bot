@@ -27,8 +27,12 @@
 
 		<!-- logos -->
 		<div class="flex items-center justify-center gap-[200px] mt-40 mb-52">
-			<img src="@/assets/binance-logo.png" alt="" class="h-14 w-auto" />
-			<img src="@/assets/ftx-logo.png" alt="" class="h-14 w-auto" />
+			<a href="https://www.binance.com/en">
+				<img src="@/assets/binance-logo.png" alt="" class="h-14 w-auto" />
+			</a>
+			<a href="https://ftx.com/">
+				<img src="@/assets/ftx-logo.png" alt="" class="h-14 w-auto" />
+			</a>
 		</div>
 		<!-- end logos -->
 
@@ -52,121 +56,92 @@
 		</div>
 
 		<div class="mb-[200px] flex flex-col gap-y-12">
-			<div
-				class="flex items-center border-2 border-[#7277FF] shadow-[0px_0px_60px_0px_#ACAFFF3D] rounded-xl p-5 gap-x-10 bg-[#293668CC]"
-			>
-				<div class="w-[175px] h-[175px] grid place-items-center bg-[#344482] rounded-xl">
-					<img src="@/assets/chart.png" alt="" class="w-[100px] h-auto" />
-				</div>
-
-				<section class="flex flex-col gap-5">
-					<h1 class="text-[#BECCFF] text-4xl font-bold">Fibonacci</h1>
-					<p class="text-xl font-medium text-[#AFC1FF8F]">
-						If you want to add some description click here. If you want to add some
-						description click here.
-					</p>
-				</section>
-			</div>
-			<div
-				class="flex items-center border-2 border-[#7277FF] shadow-[0px_0px_60px_0px_#ACAFFF3D] rounded-xl p-5 gap-x-10 bg-[#293668CC]"
-			>
-				<div class="w-[175px] h-[175px] grid place-items-center bg-[#344482] rounded-xl">
-					<img src="@/assets/transcript.png" alt="" class="w-[100px] h-auto" />
-				</div>
-
-				<section class="flex flex-col gap-5">
-					<h1 class="text-[#BECCFF] text-4xl font-bold">Bollinger Band</h1>
-					<p class="text-xl font-medium text-[#AFC1FF8F]">
-						If you want to add some description click here. If you want to add some
-						description click here.
-					</p>
-				</section>
-			</div>
-			<div
-				class="flex items-center border-2 border-[#7277FF] shadow-[0px_0px_60px_0px_#ACAFFF3D] rounded-xl p-5 gap-x-10 bg-[#293668CC]"
-			>
-				<div class="w-[175px] h-[175px] grid place-items-center bg-[#344482] rounded-xl">
-					<img src="@/assets/select.png" alt="" class="w-[100px] h-auto" />
-				</div>
-
-				<section class="flex flex-col gap-5">
-					<h1 class="text-[#BECCFF] text-4xl font-bold">Swing high/low</h1>
-					<p class="text-xl font-medium text-[#AFC1FF8F]">
-						If you want to add some description click here. If you want to add some
-						description click here.
-					</p>
-				</section>
-			</div>
-			<div
-				class="flex items-center border-2 border-[#7277FF] shadow-[0px_0px_60px_0px_#ACAFFF3D] rounded-xl p-5 gap-x-10 bg-[#293668CC]"
-			>
-				<div class="w-[175px] h-[175px] grid place-items-center bg-[#344482] rounded-xl">
-					<img src="@/assets/trending.png" alt="" class="w-[100px] h-auto" />
-				</div>
-
-				<section class="flex flex-col gap-5">
-					<h1 class="text-[#BECCFF] text-4xl font-bold">Support and Resistance</h1>
-					<p class="text-xl font-medium text-[#AFC1FF8F]">
-						If you want to add some description click here. If you want to add some
-						description click here.
-					</p>
-				</section>
+			<ProductHome
+				image="chart"
+				title="Fibonacci"
+				description="If you want to add some description click here. If you want to add some
+						description click here."
+			/>
+			<ProductHome
+				image="transcript"
+				title="Bollinger Band"
+				description="If you want to add some description click here. If you want to add some
+						description click here."
+			/>
+			<ProductHome
+				image="select"
+				title="Swing high/low"
+				description="If you want to add some description click here. If you want to add some
+						description click here."
+			/>
+			<ProductHome
+				image="trending"
+				title="Support and Resistance"
+				description="If you want to add some description click here. If you want to add some
+						description click here."
+			/>
+			<div class="text-right text-xl font-bold text-blue-100 mr-5">
+				<router-link to="/products">View all</router-link>
 			</div>
 		</div>
 		<!-- end how it works -->
 
 		<!-- subscription -->
-		<div class="max-w-xl mx-auto mb-[125px] relative">
-			<section class="flex flex-col items-center text-center gap-y-5">
-				<h1 class="text-[48px] w-full font-extrabold hero-text">
-					Get more features with our subscription!
-				</h1>
-				<p class="text-[24px] text-[#AFC1FF8F] opacity-[75%] font-medium leading-relaxed">
-					some interesting description about bot and functions, what can it do purpose of
-					the project and so on
-				</p>
-			</section>
-		</div>
-
-		<div class="mb-[175px] grid grid-cols-3 gap-14">
-			<div class="subscription-card">
-				<h1>Basic</h1>
-				<h6>You'll get</h6>
-				<ul>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-				</ul>
-				<button>Get it</button>
-
-				<img src="@/assets/subscribe.png" alt="" />
-				<div />
+		<div v-show="!isPaid">
+			<div class="max-w-xl mx-auto mb-[125px] relative">
+				<section class="flex flex-col items-center text-center gap-y-5">
+					<h1 class="text-[48px] w-full font-extrabold hero-text">
+						Get more features with our subscription!
+					</h1>
+					<p
+						class="text-[24px] text-[#AFC1FF8F] opacity-[75%] font-medium leading-relaxed"
+					>
+						some interesting description about bot and functions, what can it do purpose
+						of the project and so on
+					</p>
+				</section>
 			</div>
-			<div class="subscription-card">
-				<h1>Premium</h1>
-				<h6>You'll get</h6>
-				<ul>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-				</ul>
-				<button>Get it</button>
-			</div>
-			<div class="subscription-card">
-				<h1 class="">Standard</h1>
-				<h6 class="">You'll get</h6>
-				<ul class="">
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-					<li>Some cool stuff</li>
-				</ul>
-				<button class="">Get it</button>
+
+			<div class="mb-[175px] grid grid-cols-3 gap-14">
+				<div class="subscription-card">
+					<h1>Basic</h1>
+					<h6>You'll get</h6>
+					<ul>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+					</ul>
+					<button @click="subscribe(`basic`)">Get it</button>
+
+					<img src="@/assets/subscribe.png" alt="" />
+					<div />
+				</div>
+				<div class="subscription-card">
+					<h1>Premium</h1>
+					<h6>You'll get</h6>
+					<ul>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+					</ul>
+					<button>Get it</button>
+				</div>
+				<div class="subscription-card">
+					<h1 class="">Standard</h1>
+					<h6 class="">You'll get</h6>
+					<ul class="">
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+						<li>Some cool stuff</li>
+					</ul>
+					<button class="">Get it</button>
+				</div>
 			</div>
 		</div>
 		<!-- end subscription -->
@@ -257,38 +232,169 @@
 		<!-- end testimonials -->
 
 		<!-- contact -->
-		<div class="mb-[200px]">
+		<div class="relative">
 			<div class="flex items-center justify-center">
 				<h1
 					class="max-w-xl text-[48px] w-full font-extrabold hero-text mb-[75px] text-center"
 				>
-					Contact us
+					FAQ
 				</h1>
 			</div>
 
-			<div class="text-[36px] font-bold hero-text grid grid-cols-2 place-items-center gap-8">
-				<div>Instagram</div>
-				<div>Instagram</div>
-				<div>Instagram</div>
-				<div>Instagram</div>
+			<div class="grid grid-cols-2 place-items-center gap-[100px]">
+				<div>
+					<h2 class="text-[36px] font-bold hero-text">How the bot works?</h2>
+					<p class="text-[21px] font-semibold text-blue-100 leading-loose max-w-sm">
+						Our algorithm monitors multiple tickers at a time for specific conditions
+						like 1hr support resistance and give alerts accordingly. You don't need to
+						keep looking at the screen doing technical analysis, our bot does that for
+						you.
+					</p>
+				</div>
+				<div>
+					<h2 class="text-[36px] font-bold hero-text">How the bot works?</h2>
+					<p class="text-[21px] font-semibold text-blue-100 leading-loose max-w-sm">
+						Our algorithm monitors multiple tickers at a time for specific conditions
+						like 1hr support resistance and give alerts accordingly. You don't need to
+						keep looking at the screen doing technical analysis, our bot does that for
+						you.
+					</p>
+				</div>
+				<div>
+					<h2 class="text-[36px] font-bold hero-text">How the bot works?</h2>
+					<p class="text-[21px] font-semibold text-blue-100 leading-loose max-w-sm">
+						Our algorithm monitors multiple tickers at a time for specific conditions
+						like 1hr support resistance and give alerts accordingly. You don't need to
+						keep looking at the screen doing technical analysis, our bot does that for
+						you.
+					</p>
+				</div>
+				<div>
+					<h2 class="text-[36px] font-bold hero-text">How the bot works?</h2>
+					<p class="text-[21px] font-semibold text-blue-100 leading-loose max-w-sm">
+						Our algorithm monitors multiple tickers at a time for specific conditions
+						like 1hr support resistance and give alerts accordingly. You don't need to
+						keep looking at the screen doing technical analysis, our bot does that for
+						you.
+					</p>
+				</div>
 			</div>
 
-			<div class="grid place-items-center -mt-10 relative">
-				<img src="@/assets/footer.png" alt="" class="w-[165px] h-auto" />
-				<div
-					class="w-[200px] h-[200px] bg-[#698AFFCC] opacity-50 absolute -bottom-10 rounded-full z-[-1] blur-[35px]"
-				></div>
+			<div class="grid place-items-center absolute top-0 left-0 h-full w-full">
+				<div class="relative">
+					<img src="@/assets/footer.png" alt="" class="w-[165px] h-auto" />
+					<div
+						class="w-[200px] h-[200px] bg-[#698AFFCC] opacity-50 absolute top-0 rounded-full z-[-1] blur-[35px]"
+					></div>
+				</div>
 			</div>
 		</div>
 		<!-- end contact -->
+
+		<div class="my-[150px]">
+			<h1
+				class="max-w-xl mx-auto text-[48px] w-full font-extrabold hero-text mb-[75px] text-center"
+			>
+				Contact us
+			</h1>
+			<div class="grid grid-cols-2 place-items-center">
+				<div class="flex items-baseline text-2xl font-bold gap-x-3.5">
+					<h2 class="hero-text">Email</h2>
+					<div class="text-blue-100">info@technicalanalysisbot.com</div>
+				</div>
+
+				<div class="flex items-center gap-5">
+					<img src="@/assets/telegram.png" class="w-[45px] h-auto" />
+					<img src="@/assets/discord.png" class="w-[45px] h-auto" />
+				</div>
+			</div>
+		</div>
 	</main>
 </template>
 
 <script lang="ts">
+import { db } from "@/main";
+import Axios from "axios";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore/lite";
 import { defineComponent } from "vue";
+import ProductHome from "@/components/ProductHome.vue";
 
 export default defineComponent({
 	name: "home",
+	data() {
+		return {
+			isPaid: false,
+		};
+	},
+	components: {
+		ProductHome,
+	},
+	methods: {
+		async subscribe(id: any) {
+			if (!this.$store.state.user) {
+				console.log("please sign in!");
+				return;
+			}
+
+			try {
+				const docRef = await getDoc(doc(db, "users", `${this.$store.state.user?.uid}`));
+				const data = docRef.data();
+				if (data) {
+					const res = await Axios.post(
+						"http://localhost:5000/api/checkout/checkPaymentStatus",
+						{
+							subscriptionId: data.subscription_id,
+						}
+					);
+					if (res.data.paymentStatus === "unpaid") {
+						const res1 = await Axios.post("http://localhost:5000/api/checkout", {
+							lookup_key: id,
+						});
+						if (res1.data) {
+							await updateDoc(doc(db, "users", `${this.$store.state.user?.uid}`), {
+								subscription_id: res1.data.subscriptionId,
+							});
+							window.location.replace(res1.data.url);
+						}
+					}
+				} else {
+					const res2 = await Axios.post("http://localhost:5000/api/checkout", {
+						lookup_key: id,
+					});
+					if (res2.data) {
+						await setDoc(doc(db, "users", `${this.$store.state.user?.uid}`), {
+							user_id: this.$store.state.user?.uid,
+							subscription_id: res2.data.subscriptionId,
+						});
+						window.location.replace(res2.data.url);
+					}
+				}
+			} catch (error) {
+				console.error(error);
+			}
+		},
+
+		async getPaymentStatus() {
+			const docRef = await getDoc(doc(db, "users", `${this.$store.state.user?.uid}`));
+			const data = docRef.data();
+			if (data) {
+				const res = await Axios.post(
+					"http://localhost:5000/api/checkout/checkPaymentStatus",
+					{
+						subscriptionId: data.subscription_id,
+					}
+				);
+				if (res.data.paymentStatus === "paid") {
+					this.isPaid = true;
+				} else {
+					this.isPaid = false;
+				}
+			}
+		},
+	},
+	mounted() {
+		this.getPaymentStatus();
+	},
 });
 </script>
 

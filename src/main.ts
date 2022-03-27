@@ -7,6 +7,7 @@ import App from "./App.vue";
 import router from "./router";
 import "./styles/index.css";
 import VuexPersistence from "vuex-persist";
+import { getFirestore } from "firebase/firestore/lite";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyBYXdtbzFezBMQVHMRFJDxlF1XfUJgzuFk",
@@ -17,7 +18,8 @@ const firebaseConfig = {
 	appId: "1:24070889161:web:947f2b6b58a59c92d93718",
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const db = getFirestore(firebaseApp);
 
 const app: VueApp = createApp(App);
 

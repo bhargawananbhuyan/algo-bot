@@ -1,3 +1,4 @@
+import ProductsViewVue from "@/views/ProductsView.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
@@ -11,12 +12,22 @@ const router = createRouter({
 			component: HomeView,
 		},
 		{
+			path: "/products",
+			name: "products_page",
+			component: ProductsViewVue,
+		},
+		{
 			path: "/profile",
 			name: "profile",
-			component: () => import("../views/ProfileView.vue"),
+			component: () => import("@/views/ProfileView.vue"),
 			meta: {
 				requiresAuth: true,
 			},
+		},
+		{
+			path: "/payment_success",
+			name: "payment_success",
+			component: () => import("@/views/PaymentSuccess.vue"),
 		},
 	],
 });
